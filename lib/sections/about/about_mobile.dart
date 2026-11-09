@@ -68,6 +68,9 @@ class AboutMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
     final isDark = appProvider.isDark;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final imgWidth = (screenWidth * 0.74).clamp(260.0, 310.0);
+    final imgHeight = imgWidth * 1.16;
 
     return Container(
       padding: Space.h,
@@ -83,25 +86,25 @@ class AboutMobile extends StatelessWidget {
 
           // Profile Image Squircle
           Container(
-            width: 200,
-            height: 230,
+            width: imgWidth,
+            height: imgHeight,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32),
+              borderRadius: BorderRadius.circular(36),
               border: Border.all(
-                color: AppTheme.c!.primary!.withValues(alpha: 0.4),
-                width: 2.5,
+                color: AppTheme.c!.primary!.withValues(alpha: 0.45),
+                width: 3.0,
               ),
               boxShadow: [
                 BoxShadow(
                   color: AppTheme.c!.primary!.withValues(
-                      alpha: isDark ? 0.3 : 0.15),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
+                      alpha: isDark ? 0.35 : 0.2),
+                  blurRadius: 24,
+                  offset: const Offset(0, 10),
                 ),
               ],
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(33),
               child: Image.asset(
                 StaticUtils.coloredPhoto,
                 fit: BoxFit.cover,
