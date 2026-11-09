@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../configs/app_theme.dart';
-import '../../configs/app_typography.dart';
 import '../../configs/space.dart';
 import '../../provider/app_provider.dart';
 import '../../text/textfile.dart';
@@ -19,7 +18,7 @@ class ExperienceMobile extends StatelessWidget {
     final isDark = appProvider.isDark;
 
     return Container(
-      padding: Space.h,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,17 +36,28 @@ class ExperienceMobile extends StatelessWidget {
 
           // Professional Experience
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.work_rounded,
-                size: 20,
-                color: AppTheme.c!.primary,
+              Container(
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: AppTheme.c!.primary!.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  Icons.work_rounded,
+                  size: 18,
+                  color: AppTheme.c!.primary,
+                ),
               ),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   lblProfessionalExperience,
-                  style: AppText.h3b!.copyWith(
+                  style: TextStyle(
                     fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
                     color: isDark ? Colors.white : const Color(0xff0f172a),
                   ),
                 ),
@@ -62,18 +72,30 @@ class ExperienceMobile extends StatelessWidget {
 
           // Education
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.school_rounded,
-                size: 20,
-                color: AppTheme.c!.primary,
+              Container(
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: AppTheme.c!.primary!.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  Icons.school_rounded,
+                  size: 18,
+                  color: AppTheme.c!.primary,
+                ),
               ),
-              const SizedBox(width: 10),
-              Text(
-                lblEducation,
-                style: AppText.h3b!.copyWith(
-                  fontFamily: 'Montserrat',
-                  color: isDark ? Colors.white : const Color(0xff0f172a),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  lblEducation,
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                    color: isDark ? Colors.white : const Color(0xff0f172a),
+                  ),
                 ),
               ),
             ],

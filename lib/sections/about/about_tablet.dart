@@ -202,7 +202,7 @@ class AboutTab extends StatelessWidget {
                         const SizedBox(height: 8),
                         AboutMeData(
                           data: "Location",
-                          information: "Gujarat, India",
+                          information: myLocationAddress,
                           onTap: () => openURL(myLocationLink),
                         ),
                       ],

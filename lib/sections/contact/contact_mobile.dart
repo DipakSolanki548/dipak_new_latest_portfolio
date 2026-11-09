@@ -116,7 +116,7 @@ class ContactMobileTab extends StatelessWidget {
             context: context,
             icon: Icons.location_on_rounded,
             title: "Location",
-            detail: "Gujarat, India",
+            detail: myLocationAddress,
             subtitle: "Open to Remote & Relocation",
             actionLabel: "View on Map",
             onTap: () => openURL("https://maps.app.goo.gl/tSYvps71TbiKzrV7A"),

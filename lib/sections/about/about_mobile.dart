@@ -187,7 +187,7 @@ class AboutMobile extends StatelessWidget {
                 ),
                 AboutMeData(
                   data: "Location",
-                  information: "Gujarat, India",
+                  information: myLocationAddress,
                   onTap: () => openURL(myLocationLink),
                 ),
               ],

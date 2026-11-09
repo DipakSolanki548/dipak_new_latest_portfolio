@@ -36,7 +36,8 @@ String lblGujarati = "Gujarati";
 //Address
 String lblADDRESS = "ADDRESS:";
 String valueADDRESS = "Umiyanagar Society, \nAt-Kaiyal, Ta-Kadi, \nDist-Mehsana, 382705";
-String valueADDRESS1 = "Umiyanagar Society, At-Kaiyal, Ta-Kadi, Dist-Mehsana, 382705";
+String valueADDRESS1 = "Umiyanagar Society, At: Kaiyal, Ta: Kadi, Dist: Mehsana, 382705.";
+String myLocationAddress = "Umiyanagar Society, At: Kaiyal, Ta: Kadi, Dist: Mehsana, 382705.";
 String lblEmail = "EMAIL:";
 String valueEmail = "dipaksolanki548@gmail.com";
 String lblPhone = "PHONE:";
