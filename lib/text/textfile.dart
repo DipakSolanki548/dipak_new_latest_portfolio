@@ -42,7 +42,7 @@ String lblEmail = "EMAIL:";
 String valueEmail = "dipaksolanki548@gmail.com";
 String lblPhone = "PHONE:";
 String valuePhone = "+91 9913343548";
-String myCVLink = "https://drive.google.com/file/d/1ovhe9Nh5WvZMid-uftEY8jRexzcYas6H/view?usp=sharing";
+String myCVLink = "https://drive.google.com/file/d/1WZv22PDd1DEtqrNPHxfsOV4vKmLkKo00/view?usp=sharing";
 String myLocationLink = "https://maps.app.goo.gl/tSYvps71TbiKzrV7A";
 String myInstagramId = "itss.mee.dipak";
 String myInstagramLink = "https://www.instagram.com/itss.mee.dipak/";

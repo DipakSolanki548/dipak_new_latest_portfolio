@@ -46,7 +46,7 @@ class StaticUtils {
   ];
 
   static const String resume =
-      'https://drive.google.com/file/d/1ovhe9Nh5WvZMid-uftEY8jRexzcYas6H/view?usp=sharing';
+      'https://drive.google.com/file/d/1WZv22PDd1DEtqrNPHxfsOV4vKmLkKo00/view?usp=sharing';
 }
 
 class BodyUtils {
