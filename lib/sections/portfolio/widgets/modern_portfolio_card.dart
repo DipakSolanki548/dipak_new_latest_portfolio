@@ -40,13 +40,18 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
           backgroundColor: isDark ? const Color(0xff18181f) : Colors.white,
           elevation: 24,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 560),
+            constraints: BoxConstraints(
+              maxWidth: 560,
+              maxHeight: MediaQuery.of(context).size.height * 0.9,
+            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
                   // Top Gradient Header Bar
                   Container(
                     height: 5,
@@ -262,13 +267,7 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
                                 ],
                               ),
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.close_rounded,
-                                color: isDark ? Colors.white60 : Colors.black54,
-                              ),
-                              onPressed: () => Navigator.of(ctx).pop(),
-                            ),
+
                           ],
                         ),
                         const SizedBox(height: 20),
@@ -301,87 +300,110 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
                           ),
                         ),
                         const SizedBox(height: 26),
-                        Wrap(
-                          alignment: WrapAlignment.end,
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          spacing: 12,
-                          runSpacing: 10,
-                          children: [
-                            TextButton(
-                              onPressed: () => Navigator.of(ctx).pop(),
-                              child: Text(
-                                "Close",
-                                style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white60 : Colors.black54,
+                        if (widget.project.appleStoreLink.isNotEmpty ||
+                            widget.project.projectLink.isNotEmpty) ...[
+                          Row(
+                            children: [
+                              if (widget.project.appleStoreLink.isNotEmpty)
+                                Expanded(
+                                  child: ElevatedButton.icon(
+                                    icon: const Icon(
+                                      FontAwesomeIcons.apple,
+                                      size: 15,
+                                      color: Colors.white,
+                                    ),
+                                    label: const Text(
+                                      "App Store",
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff000000),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 14,
+                                        vertical: 12,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(ctx).pop();
+                                      openURL(widget.project.appleStoreLink);
+                                    },
+                                  ),
                                 ),
+                              if (widget.project.appleStoreLink.isNotEmpty &&
+                                  widget.project.projectLink.isNotEmpty)
+                                const SizedBox(width: 12),
+                              if (widget.project.projectLink.isNotEmpty)
+                                Expanded(
+                                  child: ElevatedButton.icon(
+                                    icon: const Icon(
+                                      FontAwesomeIcons.googlePlay,
+                                      size: 14,
+                                      color: Colors.white,
+                                    ),
+                                    label: const Text(
+                                      "Google Play",
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff01875f),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 14,
+                                        vertical: 12,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(ctx).pop();
+                                      openURL(widget.project.projectLink);
+                                    },
+                                  ),
+                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                        ],
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xffef4444),
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 18,
+                                vertical: 12,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 0,
+                            ),
+                            onPressed: () => Navigator.of(ctx).pop(),
+                            child: const Text(
+                              "Close",
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13,
+                                letterSpacing: 0.5,
                               ),
                             ),
-                            if (widget.project.appleStoreLink.isNotEmpty)
-                              ElevatedButton.icon(
-                                icon: const Icon(
-                                  FontAwesomeIcons.apple,
-                                  size: 15,
-                                  color: Colors.white,
-                                ),
-                                label: const Text(
-                                  "App Store",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xff000000),
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 18,
-                                    vertical: 12,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(ctx).pop();
-                                  openURL(widget.project.appleStoreLink);
-                                },
-                              ),
-                            if (widget.project.projectLink.isNotEmpty)
-                              ElevatedButton.icon(
-                                icon: const Icon(
-                                  FontAwesomeIcons.googlePlay,
-                                  size: 14,
-                                  color: Colors.white,
-                                ),
-                                label: const Text(
-                                  "Google Play",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xff01875f),
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 18,
-                                    vertical: 12,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(ctx).pop();
-                                  openURL(widget.project.projectLink);
-                                },
-                              ),
-                          ],
+                          ),
                         ),
                       ],
                     ),
@@ -392,8 +414,9 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildStorePill({
     required IconData icon,

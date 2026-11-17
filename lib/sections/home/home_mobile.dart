@@ -113,65 +113,76 @@ class HomeMobile extends StatelessWidget {
           const SizedBox(height: 12),
 
           // Animated Designation Subtitle
-          Row(
-            children: [
-              Icon(
-                Icons.play_arrow_rounded,
-                size: 16,
-                color: AppTheme.c!.primary!,
-              ),
-              const SizedBox(width: 4),
-              Expanded(
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    TyperAnimatedText(
-                      "Sr. Flutter & Android Developer",
-                      speed: const Duration(milliseconds: 60),
-                      textStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : const Color(0xff334155),
-                      ),
-                    ),
-                    TyperAnimatedText(
-                      "Cross-Platform Mobile Apps & Flutter Web",
-                      speed: const Duration(milliseconds: 60),
-                      textStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : const Color(0xff334155),
-                      ),
-                    ),
-                    TyperAnimatedText(
-                      "Project Leader & Solutions Architect",
-                      speed: const Duration(milliseconds: 60),
-                      textStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : const Color(0xff334155),
-                      ),
-                    ),
-                    TyperAnimatedText(
-                      "Multi-Platform Specialist (Apps, Web & Games)",
-                      speed: const Duration(milliseconds: 60),
-                      textStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : const Color(0xff334155),
-                      ),
-                    ),
-                  ],
-                  repeatForever: true,
-                  isRepeatingAnimation: true,
+          SizedBox(
+            height: 44,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 2.0),
+                  child: Icon(
+                    Icons.play_arrow_rounded,
+                    size: 16,
+                    color: AppTheme.c!.primary!,
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(width: 4),
+                Expanded(
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        "Sr. Flutter & Android Developer",
+                        speed: const Duration(milliseconds: 60),
+                        textStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                          color: isDark ? Colors.white70 : const Color(0xff334155),
+                        ),
+                      ),
+                      TyperAnimatedText(
+                        "Cross-Platform Mobile Apps & Flutter Web",
+                        speed: const Duration(milliseconds: 60),
+                        textStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                          color: isDark ? Colors.white70 : const Color(0xff334155),
+                        ),
+                      ),
+                      TyperAnimatedText(
+                        "Project Leader & Solutions Architect",
+                        speed: const Duration(milliseconds: 60),
+                        textStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                          color: isDark ? Colors.white70 : const Color(0xff334155),
+                        ),
+                      ),
+                      TyperAnimatedText(
+                        "Multi-Platform Specialist\n(Apps, Web & Games)",
+                        speed: const Duration(milliseconds: 60),
+                        textStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                          color: isDark ? Colors.white70 : const Color(0xff334155),
+                        ),
+                      ),
+                    ],
+                    repeatForever: true,
+                    isRepeatingAnimation: true,
+                  ),
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 10),
 
           // Short bio
           Text(

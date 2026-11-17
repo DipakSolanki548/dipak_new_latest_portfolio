@@ -73,7 +73,7 @@ class ServiceMobile extends StatelessWidget {
             text: '\nWhat I Offer',
           ),
           const CustomSectionSubHeading(
-            text: 'Specialized mobile engineering, scalable architecture & rapid MVP solutions.\n\n',
+            text: 'Specialized mobile app & Flutter web engineering, scalable architecture & rapid solutions.\n\n',
           ),
           Space.y!,
           ListView.separated(

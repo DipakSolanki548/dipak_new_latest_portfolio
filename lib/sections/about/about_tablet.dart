@@ -186,6 +186,11 @@ class AboutTab extends StatelessWidget {
                           information: valueEmail,
                           onTap: () => openURL("mailto:$valueEmail"),
                         ),
+                        const SizedBox(height: 8),
+                        const AboutMeData(
+                          data: "Specialization",
+                          information: "Mobile Apps & Flutter Web",
+                        ),
                       ],
                     ),
                   ),
@@ -229,7 +234,7 @@ class AboutTab extends StatelessWidget {
                   child: _buildStrengthCard(
                     Icons.speed_rounded,
                     "Performance First",
-                    "60fps smooth animations, memory profiling & 99.8% crash-free rate.",
+                    "60fps smooth animations, responsive web UI & 99.8% crash-free rate.",
                     isDark,
                   ),
                 ),
@@ -250,8 +255,8 @@ class AboutTab extends StatelessWidget {
                 Expanded(
                   child: _buildStrengthCard(
                     Icons.rocket_launch_rounded,
-                    "Store Deployment",
-                    "CI/CD release management on Google Play & Apple App Store.",
+                    "Store & Web Deployment",
+                    "CI/CD release management across Google Play, App Store & Web hosting.",
                     isDark,
                   ),
                 ),

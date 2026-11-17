@@ -8,7 +8,15 @@ void openURL(String url) => launchUrl(
     );
 
 // Tools & Tech
-final kTools = ["Android", "Kotlin", "Java", "Flutter", "Dart"];
+final kTools = [
+  "Android",
+  "Kotlin",
+  "Java",
+  "Flutter",
+  "Dart",
+  "Flutter Web",
+  "Responsive UI",
+];
 
 // Language Known
 final languageKnown = [lblEnglish, lblGujarati, lblHindi];
@@ -18,9 +26,15 @@ final technicalSkills = [
   TS1,
   TS2,
   TS3,
+  TS7,
 ];
 
-final technicalSkills1 = [TS4, TS5, TS6];
+final technicalSkills1 = [
+  TS4,
+  TS5,
+  TS6,
+  TS8,
+];
 
 //DB
 final dbList = [db1, db2];

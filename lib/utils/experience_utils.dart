@@ -29,12 +29,12 @@ class ExperienceUtils {
 
   static List<ExperienceModel> experienceList = [
     ExperienceModel(
-      title: "Lead / Sr. Android & Flutter Developer",
+      title: "Lead / Sr. Flutter & Android Developer",
       subTitle: "Skywave Info Solutions",
       duration:
           "Aug 2019 - Present (${calculationBetweenDuration(DateTime(2019, 8, 1), DateTime.now())})",
       description:
-          "Lead cross-platform mobile engineer directing end-to-end architecture and release cycles across 50+ published Flutter & Android applications.\n• Architected scalable state management (BLoC, Provider) & Clean Architecture across Enterprise, Social, and Gaming domains.\n• Mentored a team of 6 engineers, established strict code review standards, and implemented automated CI/CD pipelines.\n• Optimized app startup performance by 35% and maintained crash-free session rates exceeding 99.8%.\n• Managed Google Play Console and Apple Developer release tracks.",
+          "Lead cross-platform engineer directing end-to-end architecture and release cycles across 50+ published Flutter mobile applications and responsive Flutter web solutions.\n• Engineered cross-platform mobile apps (Android & iOS) and responsive Flutter web applications from a single unified codebase.\n• Architected scalable state management (BLoC, Provider) & Clean Architecture across Enterprise, E-commerce, Social, and Gaming domains.\n• Mentored a team of 6 engineers, established strict code review standards, and implemented automated CI/CD pipelines.\n• Optimized web and mobile rendering performance (60fps) and maintained crash-free session rates exceeding 99.8%.\n• Managed Google Play Console, Apple App Store, and Web hosting deployment tracks.",
     ),
     ExperienceModel(
       title: "Sr. Android Developer",

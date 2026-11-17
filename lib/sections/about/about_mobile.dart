@@ -190,6 +190,10 @@ class AboutMobile extends StatelessWidget {
                   information: myLocationAddress,
                   onTap: () => openURL(myLocationLink),
                 ),
+                const AboutMeData(
+                  data: "Specialization",
+                  information: "Mobile Apps & Flutter Web",
+                ),
               ],
             ),
           ),
@@ -206,7 +210,7 @@ class AboutMobile extends StatelessWidget {
           _buildStrengthCard(
             Icons.speed_rounded,
             "Performance First",
-            "60fps smooth animations, memory profiling & 99.8% crash-free rate.",
+            "60fps smooth animations, responsive web UI & 99.8% crash-free rate.",
             isDark,
           ),
           const SizedBox(height: 10),
@@ -219,8 +223,8 @@ class AboutMobile extends StatelessWidget {
           const SizedBox(height: 10),
           _buildStrengthCard(
             Icons.rocket_launch_rounded,
-            "Store Deployment",
-            "CI/CD release management on Google Play & Apple App Store.",
+            "Store & Web Deployment",
+            "CI/CD release management across Google Play, App Store & Web hosting.",
             isDark,
           ),
           const SizedBox(height: 24),

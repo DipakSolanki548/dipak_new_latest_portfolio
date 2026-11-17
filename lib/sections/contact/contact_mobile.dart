@@ -109,7 +109,7 @@ class ContactMobileTab extends StatelessWidget {
             text: "\nGet in Touch",
           ),
           const CustomSectionSubHeading(
-            text: "Have a project in mind? Let's connect!\n\n",
+            text: "Have an app or web project in mind? Let's build something exceptional together!\n\n",
           ),
           Space.y!,
           _buildContactCard(

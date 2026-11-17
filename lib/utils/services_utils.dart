@@ -4,25 +4,19 @@ import 'utils.dart';
 class ServicesUtils {
   static const List<String> servicesIcons = [
     StaticUtils.appDev,
-    // StaticUtils.uiux,
-    StaticUtils.rapid,
-    // StaticUtils.blog,
     StaticUtils.openSource,
+    StaticUtils.rapid,
   ];
 
   static const List<String> servicesTitles = [
     "Mobile App Development",
-    // "UI/UX Designing",
-    "Rapid Prototyping",
-    // "Technical Blog Writing",
-    "Open Source - GitHub",
+    "Flutter Web & Websites",
+    "Rapid Prototyping & MVPs",
   ];
 
   static const List<String> servicesDescription = [
-    "Android app development With Android & Flutter\n- Splash Screen\n- Firebase Auth/Cloud\n- REST APIs\n- Maps integration and more...!",
-    // "Modern UI/UX Designing\n- Adobe XD\n- Mobile & Web designs\n- Interactive UI designs\n- Responsiveness\n- Promo Videos and more..!",
-    "Rapid Prototype\n- Working MVP\n- Quick & Working prototype",
-    // "Technical Blog writing\n- Medium blogs\n- Soothing header images\n- SEO friendly\n- Researched topics and more..!",
-    "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
+    "Cross-platform Android & iOS applications with Flutter & native Android\n- Clean BLoC / Provider architecture\n- Smooth 60fps animations & responsive UI\n- Firebase Auth, Cloud Firestore & FCM\n- REST APIs, SQLite/Room, Payment Gateways & Maps",
+    "High-performance, responsive websites & web apps using Flutter Web\n- Single unified codebase for Mobile & Web\n- Responsive desktop, tablet & mobile layouts\n- Fast-loading interactive web apps & dashboards\n- Progressive Web Apps (PWA) with offline capabilities",
+    "Rapid functional MVPs & prototypes for mobile apps & web platforms\n- Working functional prototypes with live APIs\n- Fast turnaround for client & investor demonstrations\n- Production-ready scalable Flutter architecture\n- End-to-end deployment & hosting setup",
   ];
 }

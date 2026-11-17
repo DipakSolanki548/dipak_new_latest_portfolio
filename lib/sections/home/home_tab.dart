@@ -132,6 +132,7 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 14),
+                // Animated Designation Subtitle
                 Row(
                   children: [
                     Icon(
