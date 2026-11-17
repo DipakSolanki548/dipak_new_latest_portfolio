@@ -93,6 +93,13 @@ class _ServiceCardState extends State<_ServiceCard> {
                   child: Image.asset(
                     widget.serviceIcon,
                     fit: BoxFit.contain,
+                    color: (widget.serviceIcon == StaticUtils.openSource ||
+                            widget.serviceIcon.contains('open.png') ||
+                            widget.serviceIcon == StaticUtils.appDev ||
+                            widget.serviceIcon.contains('app.png'))
+                        ? (isDark ? Colors.white : Colors.black)
+                        : null,
+                    colorBlendMode: BlendMode.srcIn,
                     errorBuilder: (c, e, s) => Icon(
                       Icons.apps_rounded,
                       size: 28,

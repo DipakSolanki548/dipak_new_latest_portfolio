@@ -1,4 +1,4 @@
-String designation = " Sr. Android & Flutter Developer";
+String designation = " Sr. Flutter & Android Developer";
 String lblDipak = 'Dipak';
 String lblSolanki = 'Solanki';
 String myName = 'Dipak Solanki';

@@ -144,7 +144,7 @@ class HomeTab extends StatelessWidget {
                       child: AnimatedTextKit(
                         animatedTexts: [
                           TyperAnimatedText(
-                            "Sr. Android & Flutter Developer",
+                            "Sr. Flutter & Android Developer",
                             speed: const Duration(milliseconds: 60),
                             textStyle: TextStyle(
                               fontFamily: 'Montserrat',
@@ -156,7 +156,31 @@ class HomeTab extends StatelessWidget {
                             ),
                           ),
                           TyperAnimatedText(
-                            "Project Leader (68+ Apps Built)",
+                            "Cross-Platform Mobile Apps & Flutter Web",
+                            speed: const Duration(milliseconds: 60),
+                            textStyle: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: isDark
+                                  ? Colors.white70
+                                  : const Color(0xff334155),
+                            ),
+                          ),
+                          TyperAnimatedText(
+                            "Project Leader & Solutions Architect",
+                            speed: const Duration(milliseconds: 60),
+                            textStyle: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: isDark
+                                  ? Colors.white70
+                                  : const Color(0xff334155),
+                            ),
+                          ),
+                          TyperAnimatedText(
+                            "Multi-Platform Specialist (Apps, Web & Games)",
                             speed: const Duration(milliseconds: 60),
                             textStyle: TextStyle(
                               fontFamily: 'Montserrat',
@@ -173,6 +197,18 @@ class HomeTab extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 14),
+
+                // Short bio summary
+                Text(
+                  "Building high-performance mobile apps & responsive websites using Flutter & Android, with clean code, scalable architecture, and intuitive UI.",
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 13.5,
+                    height: 1.5,
+                    color: isDark ? Colors.white60 : const Color(0xff64748b),
+                  ),
                 ),
                 const SizedBox(height: 22),
                 Wrap(
