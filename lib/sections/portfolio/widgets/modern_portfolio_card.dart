@@ -8,6 +8,7 @@ import '../../../configs/configs.dart';
 import '../../../constants.dart';
 import '../../../model/portfolio_model.dart';
 import '../../../provider/app_provider.dart';
+import '../../../responsive/responsive.dart';
 
 class ModernPortfolioCard extends StatefulWidget {
   final PortfolioModel project;
@@ -300,111 +301,7 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
                           ),
                         ),
                         const SizedBox(height: 26),
-                        if (widget.project.appleStoreLink.isNotEmpty ||
-                            widget.project.projectLink.isNotEmpty) ...[
-                          Row(
-                            children: [
-                              if (widget.project.appleStoreLink.isNotEmpty)
-                                Expanded(
-                                  child: ElevatedButton.icon(
-                                    icon: const Icon(
-                                      FontAwesomeIcons.apple,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                    label: const Text(
-                                      "App Store",
-                                      style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xff000000),
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 14,
-                                        vertical: 12,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.of(ctx).pop();
-                                      openURL(widget.project.appleStoreLink);
-                                    },
-                                  ),
-                                ),
-                              if (widget.project.appleStoreLink.isNotEmpty &&
-                                  widget.project.projectLink.isNotEmpty)
-                                const SizedBox(width: 12),
-                              if (widget.project.projectLink.isNotEmpty)
-                                Expanded(
-                                  child: ElevatedButton.icon(
-                                    icon: const Icon(
-                                      FontAwesomeIcons.googlePlay,
-                                      size: 14,
-                                      color: Colors.white,
-                                    ),
-                                    label: const Text(
-                                      "Google Play",
-                                      style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xff01875f),
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 14,
-                                        vertical: 12,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.of(ctx).pop();
-                                      openURL(widget.project.projectLink);
-                                    },
-                                  ),
-                                ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                        ],
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xffef4444),
-                              foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 18,
-                                vertical: 12,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              elevation: 0,
-                            ),
-                            onPressed: () => Navigator.of(ctx).pop(),
-                            child: const Text(
-                              "Close",
-                              style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 13,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ),
-                        ),
+                        _buildDialogActions(ctx),
                       ],
                     ),
                   ),
@@ -417,6 +314,174 @@ class _ModernPortfolioCardState extends State<ModernPortfolioCard> {
     ),
   );
 }
+
+  Widget _buildDialogActions(BuildContext ctx) {
+    final hasApple = widget.project.appleStoreLink.isNotEmpty;
+    final hasPlay = widget.project.projectLink.isNotEmpty;
+    final hasBoth = hasApple && hasPlay;
+    final isMobile = Responsive.isMobile(ctx);
+
+    Widget buildAppStoreBtn({double? width}) {
+      final btn = ElevatedButton.icon(
+        icon: const Icon(
+          FontAwesomeIcons.apple,
+          size: 15,
+          color: Colors.white,
+        ),
+        label: const Text(
+          "App Store",
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 13,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xff000000),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 14,
+            vertical: 12,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {
+          Navigator.of(ctx).pop();
+          openURL(widget.project.appleStoreLink);
+        },
+      );
+      return width != null ? SizedBox(width: width, child: btn) : btn;
+    }
+
+    Widget buildGooglePlayBtn({double? width}) {
+      final btn = ElevatedButton.icon(
+        icon: const Icon(
+          FontAwesomeIcons.googlePlay,
+          size: 14,
+          color: Colors.white,
+        ),
+        label: const Text(
+          "Google Play",
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 13,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xff01875f),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 14,
+            vertical: 12,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {
+          Navigator.of(ctx).pop();
+          openURL(widget.project.projectLink);
+        },
+      );
+      return width != null ? SizedBox(width: width, child: btn) : btn;
+    }
+
+    Widget buildCloseBtn({double? width}) {
+      final btn = ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xffef4444),
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 18,
+            vertical: 12,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          elevation: 0,
+        ),
+        onPressed: () => Navigator.of(ctx).pop(),
+        child: const Text(
+          "Close",
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+            fontSize: 13,
+            letterSpacing: 0.5,
+          ),
+        ),
+      );
+      return width != null ? SizedBox(width: width, child: btn) : btn;
+    }
+
+    // 1. Mobile View
+    if (isMobile) {
+      if (hasBoth) {
+        // Dual links on mobile: vertical order -> Google Play, App Store, Close
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            buildGooglePlayBtn(width: double.infinity),
+            const SizedBox(height: 10),
+            buildAppStoreBtn(width: double.infinity),
+            const SizedBox(height: 10),
+            buildCloseBtn(width: double.infinity),
+          ],
+        );
+      } else {
+        // Single link on mobile: store button, then close button (both full width)
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (hasPlay) buildGooglePlayBtn(width: double.infinity),
+            if (hasApple) buildAppStoreBtn(width: double.infinity),
+            if (hasPlay || hasApple) const SizedBox(height: 10),
+            buildCloseBtn(width: double.infinity),
+          ],
+        );
+      }
+    }
+
+    // 2. Full Web / Desktop View
+    if (hasBoth) {
+      // Dual links on desktop: App Store & Play Store in one horizontal line, Close below
+      return Column(
+        children: [
+          Row(
+            children: [
+              Expanded(child: buildAppStoreBtn()),
+              const SizedBox(width: 12),
+              Expanded(child: buildGooglePlayBtn()),
+            ],
+          ),
+          const SizedBox(height: 12),
+          buildCloseBtn(width: double.infinity),
+        ],
+      );
+    } else {
+      // Single link on desktop: do not stretch, make button small and same size for Close
+      return Column(
+        children: [
+          if (hasPlay)
+            Center(
+              child: buildGooglePlayBtn(width: 220),
+            ),
+          if (hasApple)
+            Center(
+              child: buildAppStoreBtn(width: 220),
+            ),
+          if (hasPlay || hasApple) const SizedBox(height: 10),
+          Center(
+            child: buildCloseBtn(width: 220),
+          ),
+        ],
+      );
+    }
+  }
 
   Widget _buildStorePill({
     required IconData icon,
